@@ -1,0 +1,5 @@
+This is a sample file
+used to test the wc
+simulation script.
+It has five lines total
+including this one.
