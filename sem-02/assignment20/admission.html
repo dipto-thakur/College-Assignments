@@ -1,0 +1,91 @@
+<!--
+Practical 20 — Complete Responsive College Website
+Page 6 of 7: Admission
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admission — Ashford Institute of Technology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ashford <span>Institute</span></div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="admission.html" class="active">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="admission process">
+    <h2>How Admission Works</h2>
+    <div class="grid-3">
+      <div class="card"><h3>1. Entrance Score</h3><p>Submit your national entrance exam score or take our institute level test in June.</p></div>
+      <div class="card"><h3>2. Counselling</h3><p>Shortlisted candidates are called for a counselling round and document check.</p></div>
+      <div class="card"><h3>3. Seat Confirmation</h3><p>Confirm your seat with the admission fee within 7 days of the offer.</p></div>
+    </div>
+  </section>
+
+  <section aria-label="admission form">
+    <h2>Admission Enquiry Form</h2>
+    <form style="max-width:600px;">
+      <div class="grid-2" style="gap:20px; align-items:start;">
+        <div>
+          <label for="fname">Full Name</label>
+          <input type="text" id="fname" name="fname" placeholder="Your full name" required>
+        </div>
+        <div>
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" placeholder="you@email.com" required>
+        </div>
+      </div>
+
+      <div class="grid-2" style="gap:20px; align-items:start;">
+        <div>
+          <label for="fphone">Phone Number</label>
+          <input type="text" id="fphone" name="phone" placeholder="10 digit mobile number">
+        </div>
+        <div>
+          <label for="fprogram">Program Interested In</label>
+          <select id="fprogram" name="program">
+            <option value="">Select a program</option>
+            <option>Computer Science & Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Electronics & Communication</option>
+            <option>Civil Engineering</option>
+            <option>Electrical Engineering</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="fmessage">Anything you'd like to ask</label>
+      <textarea id="fmessage" name="message" rows="4" placeholder="Questions about fees, hostel, scholarships..."></textarea>
+
+      <button type="submit" class="btn" style="margin-top:24px;">Submit Enquiry</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>Ashford Institute of Technology, Sector 12, Greenfield Road</p>
+  <p style="margin-top:8px;"><a href="contact.html">Contact admissions</a></p>
+</footer>
+
+</body>
+</html>

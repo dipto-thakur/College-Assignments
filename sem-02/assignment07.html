@@ -1,0 +1,50 @@
+<!--
+Assignment 7: Introduction to CSS Selectors and Properties [24/06/2024]
+Create an HTML page with a title in the <title> tag and a heading using the <h1> tag.
+Write a paragraph explaining the role of CSS in web page styling. Use internal CSS to
+demonstrate different types of selectors (element, class, and ID) and properties. Apply styles
+to change the color, font size, and font family of the text. Ensure you include examples of at
+least three different CSS properties and values.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors and Properties</title>
+    <style>
+        /* element selector, targets every p tag */
+        p {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        /* class selector, only applies to elements with class="highlight" */
+        .highlight {
+            color: darkred;
+            font-weight: bold;
+        }
+
+        /* id selector, applies only to the one element with this id */
+        #special {
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Understanding CSS Selectors</h1>
+    <p>CSS is what makes a web page actually look presentable instead of just plain black
+    text on a white background. It controls colors, spacing, fonts, and layout, basically
+    everything about how the page appears without changing the actual content.</p>
+
+    <p class="highlight">This paragraph uses a class selector, so it stands out with a
+    different color and bold text.</p>
+
+    <p id="special">This paragraph uses an id selector, giving it its own unique color and
+    a bigger font size compared to the rest.</p>
+
+    <p>This is a normal paragraph again, only affected by the general element selector rule
+    that set the font family and font size for all p tags.</p>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!--
+Assignment 13: CSS Animation Effects
+Incorporate CSS animation effects into a web page. Use CSS transitions, transforms, and
+keyframe animations to add interactive and engaging elements to the website. Create
+animations for hover effects, scrolling effects, image sliders, or menu transitions.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nightwave — animated music player mock</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500&display=swap');
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    font-family:'Inter', sans-serif;
+    background: #0E0B16;
+    color: #F2EFEA;
+    overflow-x:hidden;
+  }
+
+  h1, h2{ font-family:'Sora', sans-serif; }
+
+  /* top nav with a sliding underline on hover */
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 6vw;
+  }
+
+  nav .logo{ font-family:'Sora', sans-serif; font-weight:800; color:#B892FF; }
+
+  nav ul{ display:flex; gap:30px; list-style:none; }
+
+  nav li a{
+    position:relative;
+    color:#F2EFEA;
+    text-decoration:none;
+    font-size:14px;
+    padding-bottom:4px;
+  }
+
+  nav li a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0%;
+    height:2px;
+    background:#B892FF;
+    transition: width 0.3s ease;
+  }
+
+  nav li a:hover::after{ width:100%; }
+
+  /* hero, fades and rises in on load */
+  @keyframes riseIn{
+    from{ opacity:0; transform: translateY(24px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  .hero{
+    text-align:center;
+    padding:90px 6vw 60px;
+    animation: riseIn 0.9s ease both;
+  }
+
+  .hero h1{
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+  }
+
+  .hero p{ color:#B7B0C6; margin-top:16px; }
+
+  /* pulsing play button */
+  @keyframes pulse{
+    0%   { box-shadow: 0 0 0 0 rgba(184,146,255,0.5); }
+    100% { box-shadow: 0 0 0 22px rgba(184,146,255,0); }
+  }
+
+  .play-btn{
+    margin-top:34px;
+    width:70px; height:70px;
+    border-radius:50%;
+    background:#B892FF;
+    border:none;
+    color:#0E0B16;
+    font-size:22px;
+    cursor:pointer;
+    animation: pulse 2s infinite;
+  }
+
+  /* image slider, plain css using scroll snap */
+  .slider{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding: 40px 6vw;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slide{
+    flex: 0 0 240px;
+    height:240px;
+    scroll-snap-align:start;
+    border-radius:16px;
+    background: linear-gradient(160deg,#3E2C61,#B892FF);
+    display:flex;
+    align-items:flex-end;
+    padding:18px;
+    font-weight:600;
+    transition: transform 0.35s ease;
+  }
+
+  .slide:hover{ transform: scale(1.04) translateY(-6px); }
+
+  /* card grid with hover lift and rotate */
+  .cards{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:24px;
+    padding:20px 6vw 90px;
+  }
+
+  .card{
+    background:#181325;
+    border-radius:14px;
+    padding:24px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .card:hover{
+    transform: translateY(-8px) rotate(-1deg);
+    background:#231C38;
+  }
+
+  footer{
+    text-align:center;
+    padding:24px;
+    font-size:13px;
+    color:#726b85;
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">nightwave</div>
+    <ul>
+      <li><a href="#">Discover</a></li>
+      <li><a href="#">Playlists</a></li>
+      <li><a href="#">Radio</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Music that finds its own rhythm.</h1>
+    <p>Hover the cards, scroll the row below, tap play. Small motion, real feedback.</p>
+    <button class="play-btn">►</button>
+  </div>
+
+  <div class="slider">
+    <div class="slide">Late Night Drives</div>
+    <div class="slide">Slow Mornings</div>
+    <div class="slide">Deep Focus</div>
+    <div class="slide">Rainy Windows</div>
+  </div>
+
+  <div class="cards">
+    <div class="card"><h2 style="font-size:1.05rem;">Weekly Discover</h2><p style="color:#B7B0C6; margin-top:8px; font-size:14px;">Fresh tracks picked for your week.</p></div>
+    <div class="card"><h2 style="font-size:1.05rem;">Sleep Sounds</h2><p style="color:#B7B0C6; margin-top:8px; font-size:14px;">Ambient tracks for winding down.</p></div>
+    <div class="card"><h2 style="font-size:1.05rem;">Top Charts</h2><p style="color:#B7B0C6; margin-top:8px; font-size:14px;">What everyone's playing right now.</p></div>
+  </div>
+
+  <footer>Nightwave — a UI motion study</footer>
+
+</body>
+</html>

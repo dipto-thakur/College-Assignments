@@ -1,0 +1,69 @@
+<!--
+Assignment 5: Styling an HTML Table [21/06/2024]
+Create an HTML page with a title, a heading using the <h2> tag, and a paragraph describing
+the importance of styling tables. Add an HTML table with a table header, table body, and at
+least four rows of data. Apply basic CSS styling to the table, including border, padding, and
+background color for the header row. Use inline styles or an internal stylesheet to achieve
+this.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        thead tr {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Employee Details</h2>
+    <p>A plain table can be hard to read, especially with lots of data. Adding some basic
+    styling like borders, padding, and a colored header row makes tables much easier on
+    the eyes and helps separate the data visually.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Priya Sharma</td>
+                <td>Marketing</td>
+                <td>45000</td>
+            </tr>
+            <tr>
+                <td>Rahul Verma</td>
+                <td>IT</td>
+                <td>60000</td>
+            </tr>
+            <tr>
+                <td>Sneha Iyer</td>
+                <td>HR</td>
+                <td>38000</td>
+            </tr>
+            <tr>
+                <td>Vikram Singh</td>
+                <td>Finance</td>
+                <td>52000</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!--
+Practical 20 — Complete Responsive College Website
+Page 3 of 7: Courses
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — Ashford Institute of Technology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ashford <span>Institute</span></div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="undergraduate programs">
+    <h2>Undergraduate Programs</h2>
+    <div class="grid-3">
+      <div class="card"><h3>Computer Science & Engineering</h3><p>4 years, 180 seats. Focus on systems, AI, and software engineering.</p></div>
+      <div class="card"><h3>Mechanical Engineering</h3><p>4 years, 120 seats. Strong manufacturing and design lab component.</p></div>
+      <div class="card"><h3>Electronics & Communication</h3><p>4 years, 120 seats. Circuits, embedded systems, signal processing.</p></div>
+      <div class="card"><h3>Civil Engineering</h3><p>4 years, 90 seats. Structural design and site practicum in year 3.</p></div>
+      <div class="card"><h3>Electrical Engineering</h3><p>4 years, 90 seats. Power systems and control theory focus.</p></div>
+      <div class="card"><h3>Information Technology</h3><p>4 years, 120 seats. Web systems, databases, and networking.</p></div>
+    </div>
+  </section>
+
+  <section aria-label="course details table">
+    <h2>Fees & Duration</h2>
+    <table style="width:100%; border-collapse:collapse;">
+      <thead style="background:var(--navy); color:white;">
+        <tr>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Program</th>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Duration</th>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Annual Fee</th>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Seats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Computer Science</td><td style="padding:12px 14px;">4 years</td><td style="padding:12px 14px;">₹1,85,000</td><td style="padding:12px 14px;">180</td></tr>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Mechanical Engineering</td><td style="padding:12px 14px;">4 years</td><td style="padding:12px 14px;">₹1,55,000</td><td style="padding:12px 14px;">120</td></tr>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Electronics & Comm.</td><td style="padding:12px 14px;">4 years</td><td style="padding:12px 14px;">₹1,60,000</td><td style="padding:12px 14px;">120</td></tr>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Civil Engineering</td><td style="padding:12px 14px;">4 years</td><td style="padding:12px 14px;">₹1,40,000</td><td style="padding:12px 14px;">90</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-label="postgraduate programs">
+    <h2>Postgraduate Programs</h2>
+    <ul style="padding-left:20px; line-height:1.9;">
+      <li>M.Tech in Computer Science, 2 years, 30 seats</li>
+      <li>M.Tech in Structural Engineering, 2 years, 20 seats</li>
+      <li>MBA in Technology Management, 2 years, 40 seats</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>Ashford Institute of Technology, Sector 12, Greenfield Road</p>
+  <p style="margin-top:8px;"><a href="contact.html">Contact admissions</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--
+Assignment 8: Applying Inline, Internal, and External Style Sheets [24/06/2024]
+Create an HTML page with a title, a heading using the <h2> tag, and a paragraph explaining
+the difference between inline, internal, and external CSS. In the same document, apply:
+- Inline CSS to one heading to change its color.
+- Internal CSS to style a paragraph with a specific font size and background color.
+- An external CSS file to style the body background color and add padding to another
+  paragraph. Link the external CSS file to the HTML document correctly.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline Internal and External CSS</title>
+    <!-- external stylesheet linked here -->
+    <link rel="stylesheet" href="style8.css">
+    <style>
+        /* internal css, only applies within this page */
+        .internal-para {
+            font-size: 18px;
+            background-color: #fff8dc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- inline css applied directly to this heading -->
+    <h2 style="color: purple;">Types of CSS</h2>
+
+    <p>There are three ways to add CSS to a page. Inline CSS is written directly inside an
+    element's style attribute and only affects that one element. Internal CSS is written inside
+    a style tag in the head of the document and applies to the whole page it's placed in.
+    External CSS lives in a separate .css file and can be linked to any number of pages,
+    which makes it the easiest to reuse and maintain.</p>
+
+    <p class="internal-para">This paragraph is styled using internal CSS, giving it a bigger
+    font size and a light background color.</p>
+
+    <p class="ext-para">This paragraph gets its padding from the external stylesheet, and the
+    overall page background color is also coming from that same external file.</p>
+
+</body>
+</html>

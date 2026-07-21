@@ -1,0 +1,85 @@
+<!--
+Practical 17 — Multi-Page Responsive Website with Navigation
+Page 4 of 5: Events
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Chapter & Verse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Chapter &amp; Verse</div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="upcoming events">
+    <h2>Upcoming Events</h2>
+    <div class="grid-3">
+      <div class="card">
+        <img src="https://placehold.co/280x160/2F4538/F6F1E7?text=Aug+3" alt="book club meeting">
+        <h3 style="margin-top:12px; font-size:1.05rem;">Monthly Book Club</h3>
+        <p style="font-size:14px; margin-top:6px;">Aug 3, 6:30pm — discussing "The Salt Path"</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/280x160/C9A15A/26261F?text=Aug+10" alt="poetry reading">
+        <h3 style="margin-top:12px; font-size:1.05rem;">Open Poetry Night</h3>
+        <p style="font-size:14px; margin-top:6px;">Aug 10, 7pm — bring one poem, yours or someone else's</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/280x160/26261F/F6F1E7?text=Aug+17" alt="kids story hour">
+        <h3 style="margin-top:12px; font-size:1.05rem;">Kids' Story Hour</h3>
+        <p style="font-size:14px; margin-top:6px;">Aug 17, 11am — for ages 4 to 8</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="what to expect">
+    <h2>What to Expect</h2>
+    <div class="grid-2">
+      <div>
+        <p>All events happen in the back room, which seats about twenty people
+        comfortably. Seating is first come, first seated, and there's no fee unless the
+        event page says otherwise.</p>
+        <ul style="margin-top:14px; padding-left:20px; line-height:1.8;">
+          <li>Book club runs on the first Sunday of every month</li>
+          <li>Poetry night is open mic, no signup required</li>
+          <li>Story hour includes a small snack for the kids</li>
+        </ul>
+      </div>
+      <img src="https://placehold.co/500x320/2F4538/F6F1E7?text=Back+Room" alt="event space">
+    </div>
+  </section>
+
+  <section aria-label="rsvp">
+    <h2>Planning to Join</h2>
+    <p>No booking system yet, just <a href="contact.html" style="text-decoration:underline;">drop us a line</a>
+    or mention it next time you're in store.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Chapter &amp; Verse, 14 Willow Street. Open Tuesday to Sunday, 10am to 7pm.</p>
+  <p style="margin-top:8px;"><a href="contact.html">Get in touch</a></p>
+</footer>
+
+</body>
+</html>

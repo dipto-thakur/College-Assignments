@@ -1,0 +1,293 @@
+<!--
+Practical 18 — Responsive Dashboard Interface
+Design a modern admin dashboard using only HTML and CSS: sidebar navigation, top nav
+bar, stat cards, a responsive data table, a profile section, CSS Grid and Flexbox for layout,
+hover effects, transitions, and responsive breakpoints. No frameworks used.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse — Admin Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  :root{
+    --bg: #F3F5F9;
+    --panel: #FFFFFF;
+    --ink: #1E2433;
+    --muted: #7B8499;
+    --accent: #5B5FEF;
+    --green: #2FB380;
+    --red: #E4574C;
+    --border: #E7EAF1;
+  }
+
+  body{
+    font-family:'Manrope', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  /* overall layout: sidebar + main column, using grid */
+  .app{
+    display:grid;
+    grid-template-columns: 240px 1fr;
+    min-height:100vh;
+  }
+
+  .sidebar{
+    background: var(--ink);
+    color:#B9C0D4;
+    padding: 26px 20px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .sidebar .logo{
+    color:white;
+    font-weight:700;
+    font-size:1.2rem;
+    margin-bottom:36px;
+  }
+
+  .sidebar nav ul{ list-style:none; display:flex; flex-direction:column; gap:6px; }
+
+  .sidebar nav a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#B9C0D4;
+    text-decoration:none;
+    padding:11px 14px;
+    border-radius:8px;
+    font-size:14px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .sidebar nav a:hover, .sidebar nav a.active{
+    background: rgba(91,95,239,0.18);
+    color:white;
+  }
+
+  .sidebar .bottom{ margin-top:auto; font-size:12px; color:#6b7284; }
+
+  /* main column */
+  .main{ display:flex; flex-direction:column; }
+
+  .topbar{
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .topbar input{
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:9px 14px;
+    width:280px;
+    font-family:inherit;
+    font-size:14px;
+  }
+
+  .profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .avatar{
+    width:38px; height:38px;
+    border-radius:50%;
+    background: var(--accent);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:14px;
+  }
+
+  .profile .name{ font-size:14px; font-weight:600; }
+  .profile .role{ font-size:12px; color: var(--muted); }
+
+  .content{ padding: 30px; }
+
+  .content h1{ font-size:1.5rem; margin-bottom:4px; }
+  .content .sub{ color: var(--muted); font-size:14px; margin-bottom:26px; }
+
+  /* stat cards, css grid, responsive */
+  .stats{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:20px;
+    margin-bottom:30px;
+  }
+
+  .stat-card{
+    background: var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .stat-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(30,36,51,0.06);
+  }
+
+  .stat-card .label{ font-size:13px; color: var(--muted); }
+  .stat-card .value{ font-size:1.6rem; font-weight:700; margin-top:6px; }
+  .stat-card .delta{ font-size:12px; margin-top:6px; }
+  .delta.up{ color: var(--green); }
+  .delta.down{ color: var(--red); }
+
+  /* table panel */
+  .panel{
+    background: var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px;
+  }
+
+  .panel h2{ font-size:1.05rem; margin-bottom:16px; }
+
+  table{ width:100%; border-collapse:collapse; }
+
+  th, td{
+    text-align:left;
+    padding:12px 10px;
+    font-size:13px;
+    border-bottom:1px solid var(--border);
+  }
+
+  th{ color: var(--muted); font-weight:600; }
+
+  tr{ transition: background 0.15s ease; }
+  tbody tr:hover{ background: #F8F9FD; }
+
+  .badge{
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+  }
+
+  .badge.paid{ background:#E4F7EE; color: var(--green); }
+  .badge.pending{ background:#FDF1E7; color:#C97A2C; }
+  .badge.failed{ background:#FCE9E8; color: var(--red); }
+
+  /* responsive breakpoints */
+  @media (max-width: 1000px){
+    .stats{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 800px){
+    .app{ grid-template-columns: 1fr; }
+    .sidebar{
+      flex-direction:row;
+      align-items:center;
+      overflow-x:auto;
+      padding:14px 16px;
+    }
+    .sidebar .logo{ margin:0 20px 0 0; }
+    .sidebar nav ul{ flex-direction:row; }
+    .sidebar .bottom{ display:none; }
+    .topbar input{ width:160px; }
+  }
+
+  @media (max-width: 560px){
+    .stats{ grid-template-columns: 1fr; }
+    table{ font-size:12px; }
+    .topbar input{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="logo">Pulse</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Overview</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+    <div class="bottom">v2.4.1 — internal build</div>
+  </aside>
+
+  <div class="main">
+
+    <div class="topbar">
+      <input type="text" placeholder="Search orders, customers...">
+      <div class="profile">
+        <div class="avatar">RS</div>
+        <div>
+          <div class="name">Riya Sen</div>
+          <div class="role">Store Admin</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h1>Overview</h1>
+      <p class="sub">Here's what happened across the store this week.</p>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="label">Revenue</div>
+          <div class="value">₹4,82,300</div>
+          <div class="delta up">▲ 8.2% vs last week</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Orders</div>
+          <div class="value">1,204</div>
+          <div class="delta up">▲ 3.1% vs last week</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Refund Rate</div>
+          <div class="value">1.8%</div>
+          <div class="delta down">▼ 0.4% vs last week</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">New Customers</div>
+          <div class="value">312</div>
+          <div class="delta up">▲ 12.6% vs last week</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Recent Orders</h2>
+        <table>
+          <thead>
+            <tr><th>Order</th><th>Customer</th><th>Date</th><th>Amount</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>#10231</td><td>Aditi Kapoor</td><td>21 Jul</td><td>₹2,400</td><td><span class="badge paid">Paid</span></td></tr>
+            <tr><td>#10230</td><td>Rohan Mehta</td><td>21 Jul</td><td>₹1,150</td><td><span class="badge pending">Pending</span></td></tr>
+            <tr><td>#10229</td><td>Sana Iqbal</td><td>20 Jul</td><td>₹3,760</td><td><span class="badge paid">Paid</span></td></tr>
+            <tr><td>#10228</td><td>Vikram Joshi</td><td>20 Jul</td><td>₹890</td><td><span class="badge failed">Failed</span></td></tr>
+            <tr><td>#10227</td><td>Neha Bhatt</td><td>19 Jul</td><td>₹5,200</td><td><span class="badge paid">Paid</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

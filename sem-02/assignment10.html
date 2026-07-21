@@ -1,0 +1,204 @@
+<!--
+Assignment 10: Personal Portfolio Website
+Create a personal portfolio website using HTML and CSS. There should be sections for an
+about me, projects, skills, and contact information. Use CSS to style the layout, typography,
+and colors to create a visually appealing and professional looking portfolio.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Meera Nair — Letterpress & Print Design</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;900&family=Inter:wght@400;500&display=swap');
+
+  :root{
+    --ink: #1B2A41;
+    --paper: #F7F5F0;
+    --brass: #B08D57;
+    --charcoal: #2B2B2B;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  body{
+    background: var(--paper);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3{
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+  }
+
+  header{
+    padding: 100px 8vw 60px;
+    border-bottom: 1px solid rgba(27,42,65,0.15);
+  }
+
+  header .eyebrow{
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--brass);
+    margin-bottom: 14px;
+  }
+
+  header h1{
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 900;
+    max-width: 14ch;
+  }
+
+  header p{
+    max-width: 46ch;
+    margin-top: 18px;
+    font-size: 18px;
+    color: #4b4b4b;
+  }
+
+  section{
+    padding: 70px 8vw;
+    border-bottom: 1px solid rgba(27,42,65,0.1);
+  }
+
+  section h2{
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #about p{ max-width: 60ch; font-size: 17px; }
+
+  .projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+  }
+
+  .project-card{
+    background: white;
+    border: 1px solid rgba(27,42,65,0.12);
+    padding: 26px;
+    border-radius: 2px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .project-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 24px rgba(27,42,65,0.1);
+  }
+
+  .project-card h3{
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .project-card span{
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+
+  .skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .skills-list li{
+    list-style: none;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+  }
+
+  #contact{
+    background: var(--ink);
+    color: var(--paper);
+    border-bottom: none;
+  }
+
+  #contact h2{ color: var(--paper); }
+
+  #contact a{
+    color: var(--brass);
+    text-decoration: none;
+    border-bottom: 1px solid var(--brass);
+  }
+
+  footer{
+    text-align:center;
+    padding: 24px;
+    font-size: 13px;
+    color: #8a8a8a;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="eyebrow">Print &amp; Letterpress Designer</div>
+    <h1>Meera Nair</h1>
+    <p>I make objects out of ink and pressure — cards, posters and books, set and printed by
+    hand in a small studio in Pondicherry.</p>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I started as a typesetter's apprentice ten years ago and never really left the press room.
+    My work sits somewhere between graphic design and craft — every piece is planned on a
+    screen but finished by hand, one impression at a time. I care about the weight of paper,
+    the bite of a letterpress plate, and giving old techniques new use.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Monsoon Wedding Suite</h3>
+        <p>A three piece invitation set, hand set in 12pt Caslon and printed on cotton stock.</p>
+        <span>2024</span>
+      </div>
+      <div class="project-card">
+        <h3>Coastal Type Poster Series</h3>
+        <p>Six limited edition posters exploring type drawn from old harbour signage.</p>
+        <span>2023</span>
+      </div>
+      <div class="project-card">
+        <h3>Studio Ledger Notebooks</h3>
+        <p>A small run of bound notebooks with a debossed cover mark and custom endpapers.</p>
+        <span>2023</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Letterpress Printing</li>
+      <li>Typesetting</li>
+      <li>Bookbinding</li>
+      <li>Adobe InDesign</li>
+      <li>Paper Selection</li>
+      <li>Screen Printing</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Open for commissions and small studio visits.</p>
+    <p style="margin-top:14px;">Email: <a href="mailto:hello@meeranair.studio">hello@meeranair.studio</a></p>
+    <p>Instagram: <a href="#">@meeranair.press</a></p>
+  </section>
+
+  <footer>Meera Nair — Print Studio, Pondicherry</footer>
+
+</body>
+</html>

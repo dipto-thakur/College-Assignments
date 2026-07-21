@@ -1,0 +1,78 @@
+<!--
+Practical 20 — Complete Responsive College Website
+Page 2 of 7: About
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Ashford Institute of Technology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ashford <span>Institute</span></div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="our history">
+    <h2>Our History</h2>
+    <div class="grid-2">
+      <div>
+        <p>Ashford Institute of Technology was founded in 1978 by a group of five engineers
+        who wanted a college that stayed small on purpose. That's mostly still true, we've
+        grown from 120 students to 1,800, but batch sizes in every core class are capped
+        well below what most institutes allow.</p>
+        <p style="margin-top:14px;">We added our computer science program in 1994 and our
+        electronics program in 2003, and both have since become the two most applied to
+        programs on campus.</p>
+      </div>
+      <img src="https://placehold.co/540x360/D9A441/1B3A63?text=Founders+1978" alt="the founding faculty in 1978">
+    </div>
+  </section>
+
+  <section aria-label="mission and values">
+    <h2>What We Stand For</h2>
+    <ul style="padding-left:20px; line-height:1.9;">
+      <li>Small class sizes, capped at 40 students for every core engineering course</li>
+      <li>Faculty who teach, not just senior researchers who show up occasionally</li>
+      <li>Labs open to undergraduates from year one, not reserved for postgrad research</li>
+      <li>A placement office that works with employers year round, not just in March</li>
+    </ul>
+  </section>
+
+  <section aria-label="accreditation">
+    <h2>Accreditation & Recognition</h2>
+    <div class="grid-3">
+      <div class="card"><h3>NBA Accredited</h3><p>All undergraduate programs, renewed 2023</p></div>
+      <div class="card"><h3>NAAC A+ Grade</h3><p>Institutional rating, valid through 2027</p></div>
+      <div class="card"><h3>AICTE Approved</h3><p>Recognized since founding in 1978</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Ashford Institute of Technology, Sector 12, Greenfield Road</p>
+  <p style="margin-top:8px;"><a href="contact.html">Contact admissions</a></p>
+</footer>
+
+</body>
+</html>

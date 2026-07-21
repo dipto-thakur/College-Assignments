@@ -1,0 +1,96 @@
+<!--
+Practical 17 — Multi-Page Responsive Website with Navigation
+Page 3 of 5: Catalog
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalog — Chapter & Verse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Chapter &amp; Verse</div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="catalog.html" class="active">Catalog</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="this week's picks">
+    <h2>This Week's Picks</h2>
+    <div class="grid-3">
+      <div class="card">
+        <img src="https://placehold.co/260x340/2F4538/F6F1E7?text=Novel" alt="featured novel">
+        <h3 style="margin-top:12px; font-size:1rem;">The Salt Path</h3>
+        <p style="font-size:14px; margin-top:6px;">₹499 — staff pick of the month</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/260x340/C9A15A/26261F?text=Poetry" alt="featured poetry">
+        <h3 style="margin-top:12px; font-size:1rem;">Milk and Honey</h3>
+        <p style="font-size:14px; margin-top:6px;">₹350 — back in stock</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/260x340/26261F/F6F1E7?text=Secondhand" alt="featured secondhand">
+        <h3 style="margin-top:12px; font-size:1rem;">A Suitable Boy</h3>
+        <p style="font-size:14px; margin-top:6px;">₹220 — secondhand, good condition</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="catalog table">
+    <h2>Full Catalog Sample</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Section</th>
+          <th>Price</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Norwegian Wood</td><td>Haruki Murakami</td><td>Fiction</td><td>₹450</td><td>In stock</td></tr>
+        <tr><td>The Bell Jar</td><td>Sylvia Plath</td><td>Fiction</td><td>₹380</td><td>In stock</td></tr>
+        <tr><td>Interior Chinatown</td><td>Charles Yu</td><td>Fiction</td><td>₹420</td><td>Low stock</td></tr>
+        <tr><td>Devotions</td><td>Mary Oliver</td><td>Poetry</td><td>₹340</td><td>In stock</td></tr>
+        <tr><td>Sapiens</td><td>Yuval Noah Harari</td><td>Non-fiction</td><td>₹499</td><td>In stock</td></tr>
+        <tr><td>The God of Small Things</td><td>Arundhati Roy</td><td>Fiction, secondhand</td><td>₹250</td><td>Only 1 left</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-label="browse by section">
+    <h2>Browse by Section</h2>
+    <ul style="padding-left:20px; line-height:1.9;">
+      <li><a href="#">Fiction &amp; Literary</a></li>
+      <li><a href="#">Poetry</a></li>
+      <li><a href="#">Non-fiction &amp; Essays</a></li>
+      <li><a href="#">Children's Books</a></li>
+      <li><a href="#">Secondhand Shelf</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>Chapter &amp; Verse, 14 Willow Street. Open Tuesday to Sunday, 10am to 7pm.</p>
+  <p style="margin-top:8px;"><a href="contact.html">Get in touch</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!--
+Practical 17 — Multi-Page Responsive Website with Navigation
+Page 1 of 5: Home
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter & Verse — Independent Bookstore</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Chapter &amp; Verse</div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>A small bookstore for people who still read the last page slowly.</h1>
+  <p>New and secondhand books, a reading corner, and a events calendar that's actually
+  worth checking every month.</p>
+  <a class="btn" href="catalog.html" style="margin-top:24px; display:inline-block;">Browse the catalog</a>
+</div>
+
+<main>
+
+  <section aria-label="what we offer">
+    <h2>What you'll find here</h2>
+    <div class="grid-3">
+      <div class="card">
+        <img src="https://placehold.co/300x180/2F4538/F6F1E7?text=Fiction" alt="fiction shelf">
+        <h3 style="margin-top:14px; font-size:1.1rem;">Fiction & Poetry</h3>
+        <p style="margin-top:8px; font-size:14px;">A shelf that changes every week, curated by the staff.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/300x180/C9A15A/26261F?text=Secondhand" alt="secondhand books">
+        <h3 style="margin-top:14px; font-size:1.1rem;">Secondhand Finds</h3>
+        <p style="margin-top:8px; font-size:14px;">Old editions, annotated copies, and out of print gems.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/300x180/26261F/F6F1E7?text=Events" alt="reading event">
+        <h3 style="margin-top:14px; font-size:1.1rem;">Reading Nights</h3>
+        <p style="margin-top:8px; font-size:14px;">Small group discussions, one book a month, all welcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="why visit">
+    <h2>Why people keep coming back</h2>
+    <div class="grid-2">
+      <img src="https://placehold.co/500x340/2F4538/F6F1E7?text=Store+Interior" alt="inside the store">
+      <div>
+        <p>We've been open on the same corner since 2012. No loyalty app, no scanning
+        codes at checkout, just a person behind the counter who has probably read the
+        book you're holding.</p>
+        <p style="margin-top:14px;">Read more about how the store started on the
+        <a href="about.html" style="text-decoration:underline;">about page</a>, or see
+        what's on this month on the <a href="events.html" style="text-decoration:underline;">events page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Chapter &amp; Verse, 14 Willow Street. Open Tuesday to Sunday, 10am to 7pm.</p>
+  <p style="margin-top:8px;"><a href="contact.html">Get in touch</a></p>
+</footer>
+
+</body>
+</html>

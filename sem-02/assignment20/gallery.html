@@ -1,0 +1,77 @@
+<!--
+Practical 20 — Complete Responsive College Website
+Page 5 of 7: Gallery
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Ashford Institute of Technology</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:16px;
+  }
+  .gallery-grid img{
+    border-radius:8px;
+    height:180px;
+    width:100%;
+    object-fit:cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery-grid img:hover{
+    transform: scale(1.04);
+    box-shadow: 0 12px 22px rgba(27,58,99,0.18);
+  }
+  @media (max-width:900px){ .gallery-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width:560px){ .gallery-grid{ grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ashford <span>Institute</span></div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="campus gallery">
+    <h2>Campus Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://placehold.co/300x220/1B3A63/F7F8FA?text=Main+Block" alt="main academic block">
+      <img src="https://placehold.co/300x220/D9A441/1B3A63?text=Library" alt="central library">
+      <img src="https://placehold.co/300x220/1B3A63/F7F8FA?text=Robotics+Lab" alt="robotics lab">
+      <img src="https://placehold.co/300x220/D9A441/1B3A63?text=Sports+Ground" alt="sports ground">
+      <img src="https://placehold.co/300x220/1B3A63/F7F8FA?text=Hostel" alt="hostel building">
+      <img src="https://placehold.co/300x220/D9A441/1B3A63?text=Auditorium" alt="auditorium">
+      <img src="https://placehold.co/300x220/1B3A63/F7F8FA?text=Cafeteria" alt="cafeteria">
+      <img src="https://placehold.co/300x220/D9A441/1B3A63?text=Convocation" alt="convocation day">
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Ashford Institute of Technology, Sector 12, Greenfield Road</p>
+  <p style="margin-top:8px;"><a href="contact.html">Contact admissions</a></p>
+</footer>
+
+</body>
+</html>

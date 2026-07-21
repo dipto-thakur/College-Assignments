@@ -1,0 +1,93 @@
+<!--
+Practical 20 — Complete Responsive College Website
+Page 1 of 7: Home
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashford Institute of Technology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ashford <span>Institute</span></div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>An engineering education built on close mentorship, not lecture halls of six hundred.</h1>
+  <p>Ashford Institute has trained engineers and researchers since 1978. Small batches,
+  senior faculty in every classroom, and labs you can actually get time on.</p>
+  <a class="btn" href="admission.html">Apply for 2026 intake</a>
+</div>
+
+<main>
+
+  <section aria-label="quick facts">
+    <h2>At a Glance</h2>
+    <div class="grid-4">
+      <div class="card"><h3>46</h3><p>years of teaching</p></div>
+      <div class="card"><h3>1,800</h3><p>students on campus</p></div>
+      <div class="card"><h3>7</h3><p>undergraduate programs</p></div>
+      <div class="card"><h3>92%</h3><p>placement rate, 2025 batch</p></div>
+    </div>
+  </section>
+
+  <section aria-label="programs teaser">
+    <h2>What You Can Study</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Computer Science</h3>
+        <p>Systems, AI, and software engineering, with a mandatory internship in year three.</p>
+      </div>
+      <div class="card">
+        <h3>Mechanical Engineering</h3>
+        <p>Design and manufacturing, taught alongside the campus prototyping lab.</p>
+      </div>
+      <div class="card">
+        <h3>Electronics & Communication</h3>
+        <p>Circuits, embedded systems, and a strong signal processing elective track.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px;"><a href="courses.html" style="text-decoration:underline; color:var(--navy); font-weight:600;">See the full list of courses</a></p>
+  </section>
+
+  <section aria-label="campus life">
+    <h2>Life on Campus</h2>
+    <div class="grid-2">
+      <img src="https://placehold.co/560x360/1B3A63/F7F8FA?text=Campus" alt="Ashford campus grounds">
+      <div>
+        <p>The campus sits on 40 acres just outside the city, with hostels, a central library
+        open past midnight during exams, and a student run radio station that's older than
+        most of the faculty.</p>
+        <p style="margin-top:14px;">Take a look at our <a href="gallery.html" style="text-decoration:underline;">photo gallery</a>
+        or read more <a href="about.html" style="text-decoration:underline;">about the institute</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Ashford Institute of Technology, Sector 12, Greenfield Road</p>
+  <p style="margin-top:8px;"><a href="contact.html">Contact admissions</a></p>
+</footer>
+
+</body>
+</html>

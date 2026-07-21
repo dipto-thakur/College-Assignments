@@ -1,0 +1,211 @@
+/*
+Practical 17 — Multi-Page Responsive Website with Navigation
+Shared stylesheet used by all 5 pages of the Chapter & Verse bookstore site
+(index.html, about.html, catalog.html, events.html, contact.html)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Karla:wght@400;500;700&display=swap');
+
+:root{
+  --green: #2F4538;
+  --cream: #F6F1E7;
+  --gold: #C9A15A;
+  --ink: #26261F;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+body{
+  font-family: 'Karla', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1, h2, h3{ font-family: 'Lora', serif; }
+
+a{ color: inherit; }
+
+img{ max-width: 100%; display:block; }
+
+/* header + nav, shared across every page */
+header{
+  background: var(--green);
+  color: var(--cream);
+}
+
+.nav-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 6vw;
+}
+
+.brand{
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+nav ul{
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+
+nav a{
+  text-decoration: none;
+  color: var(--cream);
+  font-size: 15px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover{ border-bottom-color: rgba(201,161,90,0.5); }
+
+nav a.active{
+  border-bottom-color: var(--gold);
+  color: var(--gold);
+}
+
+/* hamburger, hidden on desktop */
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  color: var(--cream);
+  font-size: 1.6rem;
+  cursor:pointer;
+}
+
+/* generic page section wrapper */
+main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 6vw;
+}
+
+section{ margin-bottom: 60px; }
+
+section h2{
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--green);
+}
+
+/* reusable grid / flex layout helpers */
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.flex-row{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card{
+  background: white;
+  border: 1px solid rgba(47,69,56,0.12);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.btn{
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 12px 26px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+}
+
+/* hero used on the home page */
+.hero{
+  background: var(--green);
+  color: var(--cream);
+  text-align: center;
+  padding: 90px 6vw;
+}
+
+.hero h1{
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  max-width: 18ch;
+  margin: 0 auto 18px;
+}
+
+.hero p{ max-width: 46ch; margin: 0 auto; color: #d8d3c4; }
+
+/* table styling, used on catalog page */
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td{
+  border: 1px solid rgba(47,69,56,0.15);
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+thead{
+  background: var(--green);
+  color: var(--cream);
+}
+
+/* footer, shared across every page */
+footer{
+  background: var(--ink);
+  color: #c9c4b6;
+  text-align: center;
+  padding: 30px;
+  font-size: 13px;
+}
+
+footer a{ color: var(--gold); text-decoration:none; }
+
+/* ---------- responsive breakpoints ---------- */
+
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: 1fr 1fr; }
+  .grid-2{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px){
+  .menu-toggle{ display:block; }
+
+  nav ul{
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--green);
+    flex-direction: column;
+    padding: 16px 6vw;
+    gap: 16px;
+  }
+
+  nav ul.open{ display: flex; }
+
+  .nav-wrap{ position: relative; flex-wrap: wrap; }
+
+  .grid-3{ grid-template-columns: 1fr; }
+}

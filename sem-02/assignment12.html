@@ -1,0 +1,179 @@
+<!--
+Assignment 12: Product Landing Page
+Create a product landing page for a fictional product or an existing one. Use HTML to
+structure the page and CSS to style the layout, typography, buttons, and images. Focus on
+creating an engaging page that effectively showcases the chosen product.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fluid — the bottle that tracks your day</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600&display=swap');
+
+  :root{
+    --deep: #0B2545;
+    --aqua: #4FD1C5;
+    --mist: #EAF6F6;
+    --ink: #10233B;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    font-family:'Manrope', sans-serif;
+    background: var(--mist);
+    color: var(--ink);
+  }
+
+  h1, h2{ font-family:'Space Grotesk', sans-serif; }
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 6vw;
+  }
+
+  header .logo{ font-weight:700; font-size:1.3rem; color: var(--deep); }
+
+  .hero{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    gap:40px;
+    padding:40px 6vw 90px;
+  }
+
+  .hero h1{
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    color: var(--deep);
+    line-height:1.1;
+  }
+
+  .hero p{
+    margin:20px 0 28px;
+    max-width:42ch;
+    font-size:17px;
+    color:#3a4a5e;
+  }
+
+  .cta{
+    background: var(--deep);
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+  }
+
+  .bottle{
+    justify-self:center;
+    width:180px;
+    height:340px;
+    background: linear-gradient(180deg, var(--aqua), var(--deep));
+    border-radius: 60px 60px 30px 30px;
+    position:relative;
+  }
+
+  .bottle::before{
+    content:"";
+    position:absolute;
+    top:-26px; left:50%;
+    transform: translateX(-50%);
+    width:60px; height:40px;
+    background: var(--deep);
+    border-radius:10px;
+  }
+
+  .stats{
+    display:flex;
+    justify-content:space-around;
+    background: var(--deep);
+    color:white;
+    padding:40px 6vw;
+    text-align:center;
+  }
+
+  .stats div span{
+    display:block;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:2rem;
+    color: var(--aqua);
+  }
+
+  .features{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:26px;
+    padding:70px 6vw;
+  }
+
+  .feature{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    border:1px solid rgba(11,37,69,0.08);
+  }
+
+  .feature h2{ font-size:1.1rem; margin-bottom:10px; color: var(--deep); }
+
+  footer{
+    text-align:center;
+    padding:26px;
+    font-size:13px;
+    color:#6a7a8a;
+  }
+
+  @media (max-width:800px){
+    .hero{ grid-template-columns:1fr; text-align:center; }
+    .hero p{ margin-left:auto; margin-right:auto; }
+    .features{ grid-template-columns:1fr; }
+    .stats{ flex-direction:column; gap:20px; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">fluid</div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Drink water like it's part of the plan, not an afterthought.</h1>
+      <p>Fluid tracks every sip, glows a gentle reminder when you're behind, and syncs
+      to one simple app. No accounts to manage, no subscriptions.</p>
+      <button class="cta">Pre-order for $59</button>
+    </div>
+    <div class="bottle"></div>
+  </div>
+
+  <div class="stats">
+    <div><span>500ml</span>Capacity</div>
+    <div><span>14 days</span>Battery life</div>
+    <div><span>0.2g</span>Sensor weight</div>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h2>Glow reminders</h2>
+      <p>A soft ring of light on the base pulses when you've gone too long without a sip.</p>
+    </div>
+    <div class="feature">
+      <h2>Auto tracking</h2>
+      <p>Fluid measures what leaves the bottle, so there's nothing to log by hand.</p>
+    </div>
+    <div class="feature">
+      <h2>Built to last</h2>
+      <p>Double walled steel and a sensor rated for years of daily use, not one season.</p>
+    </div>
+  </div>
+
+  <footer>Fluid — a small hardware studio project</footer>
+
+</body>
+</html>

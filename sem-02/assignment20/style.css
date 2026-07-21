@@ -1,0 +1,208 @@
+/*
+Practical 20 — Complete Responsive College Website
+Shared stylesheet for Ashford Institute of Technology
+Pages: index.html, about.html, courses.html, faculty.html, gallery.html,
+admission.html, contact.html
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root{
+  --navy: #1B3A63;
+  --gold: #D9A441;
+  --paper: #F7F8FA;
+  --ink: #212B36;
+  --line: #E1E5EB;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+body{
+  font-family:'Source Sans 3', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height:1.6;
+}
+
+h1, h2, h3{ font-family:'Merriweather', serif; }
+
+img{ max-width:100%; display:block; }
+
+a{ color:inherit; }
+
+/* header + nav */
+header{
+  background: var(--navy);
+  color:white;
+  position: sticky;
+  top:0;
+  z-index: 10;
+}
+
+.nav-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 6vw;
+}
+
+.brand{ font-family:'Merriweather', serif; font-weight:900; font-size:1.25rem; }
+.brand span{ color: var(--gold); }
+
+nav ul{ display:flex; gap:24px; list-style:none; }
+
+nav a{
+  text-decoration:none;
+  color:#D7DFEA;
+  font-size:14.5px;
+  padding-bottom:4px;
+  border-bottom:2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+nav a:hover{ color:white; }
+nav a.active{ color: var(--gold); border-bottom-color: var(--gold); }
+
+.menu-toggle{
+  display:none;
+  background:none; border:none;
+  color:white; font-size:1.6rem;
+  cursor:pointer;
+}
+
+/* hero, used with a modifier per page */
+.hero{
+  background: linear-gradient(180deg, rgba(27,58,99,0.92), rgba(27,58,99,0.92)), url('https://placehold.co/1400x500/1B3A63/1B3A63');
+  background-size:cover;
+  color:white;
+  text-align:center;
+  padding:90px 6vw;
+}
+
+.hero h1{ font-size:clamp(2rem, 5vw, 3.2rem); max-width:22ch; margin:0 auto 16px; }
+.hero p{ max-width:52ch; margin:0 auto; color:#C9D3E0; }
+
+.btn{
+  display:inline-block;
+  margin-top:26px;
+  background: var(--gold);
+  color: var(--navy);
+  padding:13px 28px;
+  border-radius:4px;
+  font-weight:700;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+  font-size:15px;
+}
+
+main{ max-width:1200px; margin:0 auto; padding:60px 6vw; }
+
+section{ margin-bottom:70px; }
+
+section > h2{
+  font-size:1.9rem;
+  color: var(--navy);
+  margin-bottom:24px;
+  position:relative;
+  padding-bottom:12px;
+}
+
+section > h2::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:0;
+  width:56px; height:3px;
+  background: var(--gold);
+}
+
+/* layout helpers */
+.grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:center; }
+.grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; }
+.grid-4{ display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; }
+.flex-wrap{ display:flex; flex-wrap:wrap; gap:20px; }
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 26px rgba(27,58,99,0.08);
+}
+
+.card h3{ font-size:1.1rem; color: var(--navy); margin-bottom:8px; }
+.card p{ font-size:14.5px; color:#5c6672; }
+
+/* form elements, used on admission and contact pages */
+form label{ display:block; font-size:14px; font-weight:600; margin:16px 0 6px; }
+
+form input, form select, form textarea{
+  width:100%;
+  padding:11px 14px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  font-family:inherit;
+  font-size:14px;
+  background:white;
+}
+
+form input:focus, form select:focus, form textarea:focus{
+  outline:none;
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(27,58,99,0.1);
+}
+
+footer{
+  background: var(--navy);
+  color:#B9C4D4;
+  text-align:center;
+  padding:34px 6vw;
+  font-size:13.5px;
+}
+
+footer a{ color: var(--gold); text-decoration:none; }
+
+/* fade in animation used across hero and cards */
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(18px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+.hero h1, .hero p, .hero .btn{ animation: fadeUp 0.7s ease both; }
+.hero p{ animation-delay: 0.1s; }
+.hero .btn{ animation-delay: 0.2s; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 950px){
+  .grid-2{ grid-template-columns:1fr; }
+  .grid-3{ grid-template-columns: 1fr 1fr; }
+  .grid-4{ grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px){
+  .menu-toggle{ display:block; }
+  .nav-wrap{ position:relative; flex-wrap:wrap; }
+
+  nav ul{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:60px; left:0; right:0;
+    background: var(--navy);
+    padding:16px 6vw;
+    gap:14px;
+  }
+
+  nav ul.open{ display:flex; }
+
+  .grid-3, .grid-4{ grid-template-columns: 1fr; }
+}

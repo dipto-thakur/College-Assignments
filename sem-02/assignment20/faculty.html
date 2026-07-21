@@ -1,0 +1,89 @@
+<!--
+Practical 20 — Complete Responsive College Website
+Page 4 of 7: Faculty
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty — Ashford Institute of Technology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ashford <span>Institute</span></div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="faculty.html" class="active">Faculty</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="department heads">
+    <h2>Department Heads</h2>
+    <div class="grid-4">
+      <div class="card">
+        <img src="https://placehold.co/220x220/1B3A63/F7F8FA?text=Dr.+Rao" alt="Dr. Rao">
+        <h3 style="margin-top:12px; font-size:1rem;">Dr. S. Rao</h3>
+        <p>Computer Science, 22 years at Ashford</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/220x220/D9A441/1B3A63?text=Dr.+Nair" alt="Dr. Nair">
+        <h3 style="margin-top:12px; font-size:1rem;">Dr. A. Nair</h3>
+        <p>Mechanical Engineering, 18 years at Ashford</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/220x220/1B3A63/F7F8FA?text=Dr.+Verma" alt="Dr. Verma">
+        <h3 style="margin-top:12px; font-size:1rem;">Dr. P. Verma</h3>
+        <p>Electronics & Comm., 15 years at Ashford</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/220x220/D9A441/1B3A63?text=Dr.+Shah" alt="Dr. Shah">
+        <h3 style="margin-top:12px; font-size:1rem;">Dr. M. Shah</h3>
+        <p>Civil Engineering, 20 years at Ashford</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="faculty directory">
+    <h2>Faculty Directory</h2>
+    <table style="width:100%; border-collapse:collapse;">
+      <thead style="background:var(--navy); color:white;">
+        <tr>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Name</th>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Department</th>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Specialization</th>
+          <th style="padding:12px 14px; text-align:left; font-size:14px;">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Dr. S. Rao</td><td style="padding:12px 14px;">CSE</td><td style="padding:12px 14px;">Distributed Systems</td><td style="padding:12px 14px;">s.rao@ashford.edu</td></tr>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Dr. A. Nair</td><td style="padding:12px 14px;">Mechanical</td><td style="padding:12px 14px;">Thermodynamics</td><td style="padding:12px 14px;">a.nair@ashford.edu</td></tr>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Dr. P. Verma</td><td style="padding:12px 14px;">ECE</td><td style="padding:12px 14px;">Signal Processing</td><td style="padding:12px 14px;">p.verma@ashford.edu</td></tr>
+        <tr style="border-bottom:1px solid var(--line);"><td style="padding:12px 14px;">Prof. K. Das</td><td style="padding:12px 14px;">CSE</td><td style="padding:12px 14px;">Machine Learning</td><td style="padding:12px 14px;">k.das@ashford.edu</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>Ashford Institute of Technology, Sector 12, Greenfield Road</p>
+  <p style="margin-top:8px;"><a href="contact.html">Contact admissions</a></p>
+</footer>
+
+</body>
+</html>

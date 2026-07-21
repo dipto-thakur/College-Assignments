@@ -1,0 +1,48 @@
+<!--
+Assignment 9: Formatting Text, Backgrounds, and Borders [25/06/2024]
+Create an HTML page with a title, a heading using the <h3> tag, and three paragraphs. Use
+CSS to format the text by changing the font family, font size, and font weight of the first
+paragraph. Apply a background color and image to the second paragraph. Add borders to
+the third paragraph, experimenting with different border styles, widths, and colors. Ensure all
+CSS is included in an internal stylesheet within the HTML document.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Backgrounds and Borders</title>
+    <style>
+        .text-format {
+            font-family: Georgia, serif;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .bg-format {
+            background-color: #e0ffe0;
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            padding: 12px;
+        }
+
+        .border-format {
+            border-style: dashed;
+            border-width: 4px;
+            border-color: #cc5500;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Playing Around With Text and Borders</h3>
+
+    <p class="text-format">This first paragraph has a different font family, a larger font
+    size, and bold text to make it stand out from regular content.</p>
+
+    <p class="bg-format">This second paragraph has a background color along with a subtle
+    background image pattern behind the text, giving it a bit more texture.</p>
+
+    <p class="border-format">This third paragraph has a dashed border with a specific width
+    and color, showing how borders can be customized beyond just a plain solid line.</p>
+
+</body>
+</html>

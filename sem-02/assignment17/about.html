@@ -1,0 +1,88 @@
+<!--
+Practical 17 — Multi-Page Responsive Website with Navigation
+Page 2 of 5: About
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Chapter & Verse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Chapter &amp; Verse</div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="our story">
+    <h2>Our Story</h2>
+    <div class="grid-2">
+      <div>
+        <p>Chapter &amp; Verse started as a single shelf inside a coffee shop in 2012. The
+        owner, Leela, kept bringing in books she'd already read and telling customers to
+        take them if they promised to bring one back. Three years later that shelf became
+        its own storefront two doors down.</p>
+        <p style="margin-top:14px;">We're still small on purpose. No more than a few
+        thousand titles at any time, chosen by people who work here, not by a sales
+        algorithm.</p>
+      </div>
+      <img src="https://placehold.co/500x360/26261F/F6F1E7?text=Leela+%26+Team" alt="the store team">
+    </div>
+  </section>
+
+  <section aria-label="what we value">
+    <h2>What We Care About</h2>
+    <ul style="padding-left:20px; line-height:1.9;">
+      <li>Books chosen by staff who've actually read them, not bestseller lists</li>
+      <li>A store that's quiet enough to read a first chapter standing at the shelf</li>
+      <li>Supporting local writers with a dedicated section near the front</li>
+      <li>Keeping prices honest, secondhand books priced to move, not to sit</li>
+    </ul>
+  </section>
+
+  <section aria-label="the team">
+    <h2>The Team</h2>
+    <div class="grid-3">
+      <div class="card">
+        <img src="https://placehold.co/260x200/C9A15A/26261F?text=Leela" alt="Leela, founder">
+        <h3 style="margin-top:12px; font-size:1rem;">Leela Menon</h3>
+        <p style="font-size:14px; margin-top:6px;">Founder, mostly found in the poetry section</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/260x200/2F4538/F6F1E7?text=Arjun" alt="Arjun, buyer">
+        <h3 style="margin-top:12px; font-size:1rem;">Arjun Rao</h3>
+        <p style="font-size:14px; margin-top:6px;">Buyer, handles the secondhand shelves</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/260x200/26261F/F6F1E7?text=Fatima" alt="Fatima, events">
+        <h3 style="margin-top:12px; font-size:1rem;">Fatima Sheikh</h3>
+        <p style="font-size:14px; margin-top:6px;">Runs the monthly reading nights</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Chapter &amp; Verse, 14 Willow Street. Open Tuesday to Sunday, 10am to 7pm.</p>
+  <p style="margin-top:8px;"><a href="contact.html">Get in touch</a></p>
+</footer>
+
+</body>
+</html>

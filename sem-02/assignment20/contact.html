@@ -1,0 +1,89 @@
+<!--
+Practical 20 — Complete Responsive College Website
+Page 7 of 7: Contact
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Ashford Institute of Technology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ashford <span>Institute</span></div>
+    <button class="menu-toggle" onclick="document.getElementById('navlist').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section aria-label="contact details">
+    <h2>Get in Touch</h2>
+    <div class="grid-2">
+      <div>
+        <p><strong>Address</strong><br>Ashford Institute of Technology, Sector 12, Greenfield Road, 500032</p>
+        <p style="margin-top:14px;"><strong>Admissions Office</strong><br>Mon to Sat, 9am to 5pm<br>+91 40 2345 6789</p>
+        <p style="margin-top:14px;"><strong>Email</strong><br><a href="mailto:admissions@ashford.edu">admissions@ashford.edu</a></p>
+      </div>
+      <img src="https://placehold.co/540x340/1B3A63/F7F8FA?text=Campus+Map" alt="map to the campus">
+    </div>
+  </section>
+
+  <section aria-label="department contacts">
+    <h2>Department Contacts</h2>
+    <ul style="padding-left:20px; line-height:1.9;">
+      <li>Computer Science — cse.office@ashford.edu</li>
+      <li>Mechanical Engineering — mech.office@ashford.edu</li>
+      <li>Electronics & Communication — ece.office@ashford.edu</li>
+      <li>Civil Engineering — civil.office@ashford.edu</li>
+    </ul>
+  </section>
+
+  <section aria-label="contact form">
+    <h2>Send a Message</h2>
+    <form style="max-width:560px;">
+      <label for="cname">Name</label>
+      <input type="text" id="cname" name="name" placeholder="Your name">
+
+      <label for="cemail">Email</label>
+      <input type="email" id="cemail" name="email" placeholder="you@email.com">
+
+      <label for="csubject">Subject</label>
+      <select id="csubject" name="subject">
+        <option>General Enquiry</option>
+        <option>Admissions</option>
+        <option>Faculty & Academics</option>
+        <option>Campus Visit</option>
+      </select>
+
+      <label for="cmessage">Message</label>
+      <textarea id="cmessage" name="message" rows="4" placeholder="How can we help?"></textarea>
+
+      <button type="submit" class="btn" style="margin-top:24px;">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>Ashford Institute of Technology, Sector 12, Greenfield Road</p>
+  <p style="margin-top:8px;">&copy; 2026 Ashford Institute of Technology</p>
+</footer>
+
+</body>
+</html>

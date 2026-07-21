@@ -1,0 +1,73 @@
+<!--
+Assignment 6: Merging Cells in an HTML Table [21/06/2024]
+Create an HTML page with a title, a heading using the <h2> tag, and a paragraph explaining
+the use of merged cells in tables. Create an HTML table with a table header and table body.
+The table should include at least five rows of data and demonstrate the use of the colspan
+and rowspan attributes to merge cells both horizontally and vertically. Ensure the table has
+a clear structure and is easy to read.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merged Cells Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Weekly Class Timetable</h2>
+    <p>Sometimes a table cell needs to stretch across more than one column or row, for
+    example when the same subject continues over two periods, or a heading needs to span
+    multiple columns. The colspan attribute merges cells across columns and rowspan
+    merges cells down rows.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Period 1</th>
+                <th>Period 2</th>
+                <th>Period 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td colspan="2">Maths (double period)</td>
+                <td>English</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>Science</td>
+                <td rowspan="2">Sports (continues Wednesday)</td>
+                <td>History</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>Computer Science</td>
+                <td>Geography</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td colspan="3">Half day, no classes</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>Maths</td>
+                <td>Science</td>
+                <td>Art</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

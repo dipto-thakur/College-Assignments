@@ -1,0 +1,235 @@
+<!--
+Assignment 14: Redesign an Existing Website
+Redesign an existing website using HTML and CSS. Analyze the original design and propose
+improvements to the layout, typography, color scheme, and overall user experience.
+
+Chosen subject: a small local bakery's website ("Bloom Bakery"), a fictional stand in for the
+kind of dated small business site that's still very common. The "before" section recreates the
+original problems on purpose, the "after" section is the redesign, and a short analysis sits
+between the two explaining what changed and why.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bloom Bakery — Redesign Case Study</title>
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family: Arial, sans-serif; }
+
+  /* ---------- BEFORE section, intentionally recreates common problems ---------- */
+  .before{
+    background:#ffffff;
+    color:#000080;
+    padding:30px;
+    border-bottom:6px solid #999;
+  }
+  .before h1{
+    font-size:40px;
+    color:#ff0000;
+    font-family: 'Comic Sans MS', cursive;
+    text-align:center;
+  }
+  .before nav{
+    background:#000080;
+    padding:6px;
+    text-align:center;
+  }
+  .before nav a{
+    color:yellow;
+    margin:0 10px;
+    text-decoration:underline;
+    font-size:14px;
+  }
+  .before .content{
+    display:block;
+    margin-top:20px;
+  }
+  .before .content img{
+    width:120px;
+    float:left;
+    margin-right:8px;
+  }
+  .before p{
+    font-size:13px;
+    line-height:1.2;
+  }
+  .before .blink{
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  /* ---------- analysis block ---------- */
+  .analysis{
+    background:#f4f4f4;
+    padding:40px 8vw;
+    font-family: Georgia, serif;
+    color:#222;
+  }
+  .analysis h2{ margin-bottom:16px; }
+  .analysis ul{ margin-top:10px; padding-left:20px; }
+  .analysis li{ margin-bottom:8px; line-height:1.5; }
+
+  /* ---------- AFTER section, the redesign ---------- */
+  .after{
+    --cream: #F7F3EC;
+    --brown: #4A3226;
+    --wheat: #C99A5B;
+    --accent: #8C6E4A;
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .after header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 6vw;
+  }
+
+  .after .logo{
+    font-family: Georgia, serif;
+    font-size:1.5rem;
+    font-weight:bold;
+  }
+
+  .after nav ul{
+    display:flex;
+    gap:26px;
+    list-style:none;
+  }
+
+  .after nav a{
+    color: var(--brown);
+    text-decoration:none;
+    font-size:15px;
+  }
+
+  .after .hero{
+    text-align:center;
+    padding:60px 6vw 80px;
+  }
+
+  .after .hero h1{
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    max-width: 18ch;
+    margin: 0 auto;
+  }
+
+  .after .hero p{
+    max-width:48ch;
+    margin: 18px auto 0;
+    color:#6b5644;
+  }
+
+  .after .btn{
+    display:inline-block;
+    margin-top:26px;
+    background: var(--wheat);
+    color:#3a2a1c;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+  }
+
+  .after .grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:24px;
+    padding: 20px 6vw 80px;
+  }
+
+  .after .item{
+    background:white;
+    border-radius:10px;
+    padding:22px;
+    border:1px solid rgba(74,50,38,0.1);
+  }
+
+  .after .item h3{ margin-bottom:8px; }
+
+  @media (max-width:800px){
+    .after .grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- BEFORE -->
+  <div class="before">
+    <h1>WELCOME TO BLOOM BAKERY!!!</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Our Menu</a>
+      <a href="#">Contact Us Page</a>
+    </nav>
+    <div class="content">
+      <img src="https://via.placeholder.com/120x90.png?text=Bread" alt="bread">
+      <p>Bloom Bakery has been baking bread and cakes since a long time in our town, we use
+      only the freshest ingredients and everything is made by hand every single day of the
+      week come visit us today for the best bakery experience you will ever have in your
+      whole life. <span class="blink">CLICK HERE FOR SPECIAL OFFERS!!!</span></p>
+    </div>
+  </div>
+
+  <!-- ANALYSIS -->
+  <div class="analysis">
+    <h2>What was wrong, and what changed</h2>
+    <ul>
+      <li>The type had no hierarchy or restraint, a decorative font at 40px next to a dense
+        wall of 13px body text with no breathing room. The redesign uses one serif for
+        headings and a plain system sans for body copy, with real spacing between them.</li>
+      <li>Navy, red, and yellow together fought for attention and had nothing to do with a
+        bakery. The redesign pulls its palette from the product itself, cream, wheat, and a
+        warm brown, so the color scheme actually reads as "bakery."</li>
+      <li>The layout depended on a floated image and no real structure, which breaks on
+        smaller screens. The redesign uses a proper grid for the menu highlights so it
+        reflows cleanly instead of collapsing.</li>
+      <li>The copy was one long paragraph doing five jobs at once, plus a shouty call to
+        action. The redesign gives the hero one short promise, a single clear button, and
+        moves supporting details into their own cards.</li>
+    </ul>
+  </div>
+
+  <!-- AFTER -->
+  <div class="after">
+    <header>
+      <div class="logo">Bloom Bakery</div>
+      <nav>
+        <ul>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Visit</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h1>Bread and cake, made by hand every morning.</h1>
+      <p>A small neighborhood bakery, open since 2009, using the same three ingredients
+      most of our recipes ever needed: flour, time, and patience.</p>
+      <a class="btn" href="#">See today's menu</a>
+    </div>
+
+    <div class="grid">
+      <div class="item">
+        <h3>Sourdough</h3>
+        <p>Fermented for 24 hours, baked fresh from 7am daily.</p>
+      </div>
+      <div class="item">
+        <h3>Seasonal Cakes</h3>
+        <p>A rotating menu built around whatever fruit is in season.</p>
+      </div>
+      <div class="item">
+        <h3>Weekend Pastries</h3>
+        <p>Croissants and morning buns, Saturday and Sunday only.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

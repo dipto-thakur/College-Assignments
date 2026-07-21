@@ -1,0 +1,176 @@
+<!--
+Assignment 15: Flexbox / CSS Grid Layout
+Create a webpage layout using CSS Flexbox or CSS Grid. Design a responsive layout that
+organizes content in a visually appealing way. Experiment with different grid or flexbox
+properties to create flexible and responsive designs.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Weekend Table — recipe grid</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;500;600&display=swap');
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:#FBF9F6;
+    color:#33302B;
+  }
+
+  h1, h2{ font-family:'DM Serif Display', serif; }
+
+  header{
+    padding:50px 6vw 20px;
+    text-align:center;
+  }
+
+  header h1{ font-size: clamp(2rem, 5vw, 3rem); }
+  header p{ color:#7a7469; margin-top:10px; }
+
+  /* main layout: grid with a large featured recipe and a side column, using grid-template-areas */
+  .layout{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "feature side";
+    gap:26px;
+    padding: 30px 6vw;
+  }
+
+  .feature{
+    grid-area: feature;
+    background: #E4572E;
+    color:white;
+    border-radius:16px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    min-height:340px;
+  }
+
+  .feature span{ font-size:13px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.85; }
+  .feature h2{ font-size:2rem; margin-top:10px; }
+
+  .side{
+    grid-area: side;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .side .mini{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    flex:1;
+    border:1px solid rgba(51,48,43,0.08);
+  }
+
+  /* recipe card grid below, auto-fit responsive grid */
+  .card-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:22px;
+    padding: 10px 6vw 70px;
+  }
+
+  .card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(51,48,43,0.08);
+  }
+
+  .card .thumb{
+    height:140px;
+    background: linear-gradient(135deg,#F2C14E,#E4572E);
+  }
+
+  .card .body{ padding:18px; }
+  .card .body h3{ font-size:1.05rem; margin-bottom:6px; }
+  .card .body p{ font-size:14px; color:#7a7469; }
+
+  /* tag row using flexbox, wraps naturally */
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    padding: 0 6vw 50px;
+  }
+
+  .tags span{
+    background:#EFE9E1;
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:13px;
+  }
+
+  @media (max-width: 800px){
+    .layout{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "feature"
+        "side";
+    }
+    .side{ flex-direction: row; overflow-x:auto; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>The Weekend Table</h1>
+    <p>Recipes worth the extra hour on a Saturday.</p>
+  </header>
+
+  <div class="layout">
+    <div class="feature">
+      <span>This week's feature</span>
+      <h2>Slow Roasted Tomato Tart</h2>
+    </div>
+    <div class="side">
+      <div class="mini">
+        <h3>Editor's Pick</h3>
+        <p style="font-size:14px; margin-top:6px; color:#7a7469;">Brown Butter Apple Cake</p>
+      </div>
+      <div class="mini">
+        <h3>Quick Fix</h3>
+        <p style="font-size:14px; margin-top:6px; color:#7a7469;">15 Minute Garlic Noodles</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="thumb"></div>
+      <div class="body"><h3>Lemon Ricotta Pancakes</h3><p>Light, fluffy, and a little bright.</p></div>
+    </div>
+    <div class="card">
+      <div class="thumb"></div>
+      <div class="body"><h3>Braised Short Rib Ragu</h3><p>A Sunday project worth the wait.</p></div>
+    </div>
+    <div class="card">
+      <div class="thumb"></div>
+      <div class="body"><h3>Charred Corn Salad</h3><p>Sweet corn with lime and chili.</p></div>
+    </div>
+    <div class="card">
+      <div class="thumb"></div>
+      <div class="body"><h3>Miso Butter Salmon</h3><p>Ready in under 25 minutes.</p></div>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span>Weeknight</span>
+    <span>Baking</span>
+    <span>Vegetarian</span>
+    <span>One Pot</span>
+    <span>Slow Cook</span>
+    <span>Under 30 Min</span>
+  </div>
+
+</body>
+</html>

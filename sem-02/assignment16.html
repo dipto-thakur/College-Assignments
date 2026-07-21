@@ -1,0 +1,176 @@
+<!--
+Assignment 16: Interactive Form
+Design and style an interactive form using HTML and CSS. Incorporate various form
+elements such as text inputs, checkboxes, radio buttons, and select dropdowns. Apply CSS
+styling to improve the form's visual appearance and user experience.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register - Community Pottery Workshop</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500;600&display=swap');
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:#EFEAE3;
+    color:#2E2A25;
+    display:flex;
+    justify-content:center;
+    padding:60px 20px;
+  }
+
+  .card{
+    background:white;
+    max-width:520px;
+    width:100%;
+    padding:44px;
+    border-radius:16px;
+    box-shadow: 0 20px 40px rgba(46,42,37,0.08);
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-size:1.7rem;
+    margin-bottom:6px;
+  }
+
+  .card > p{ color:#7c766c; margin-bottom:30px; font-size:14px; }
+
+  label{
+    display:block;
+    font-size:14px;
+    font-weight:500;
+    margin-bottom:6px;
+    margin-top:20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select{
+    width:100%;
+    padding:11px 14px;
+    border:1px solid #D8D2C7;
+    border-radius:8px;
+    font-size:14px;
+    font-family:'Inter', sans-serif;
+    background:#FBFAF8;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  select:focus{
+    outline:none;
+    border-color:#B9713D;
+    box-shadow: 0 0 0 3px rgba(185,113,61,0.15);
+  }
+
+  fieldset{
+    border:none;
+    margin-top:22px;
+    padding:0;
+  }
+
+  fieldset legend{
+    font-size:14px;
+    font-weight:500;
+    padding:0;
+    margin-bottom:10px;
+  }
+
+  .radio-row, .checkbox-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+    font-size:14px;
+  }
+
+  .radio-row input, .checkbox-row input{
+    width:16px; height:16px;
+    accent-color:#B9713D;
+  }
+
+  .submit-btn{
+    width:100%;
+    margin-top:30px;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:#2E2A25;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition: background 0.2s ease;
+  }
+
+  .submit-btn:hover{ background:#B9713D; }
+
+  .hint{ font-size:12px; color:#9c968b; margin-top:6px; }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Reserve your seat</h1>
+    <p>Saturday morning pottery sessions, small groups, all levels welcome.</p>
+
+    <form>
+      <label for="name">Full name</label>
+      <input type="text" id="name" name="name" placeholder="Ananya Roy" required>
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@email.com" required>
+
+      <label for="level">Experience level</label>
+      <select id="level" name="level">
+        <option value="">Select one</option>
+        <option value="beginner">Complete beginner</option>
+        <option value="some">Some experience</option>
+        <option value="advanced">Advanced / returning student</option>
+      </select>
+
+      <fieldset>
+        <legend>Which session works best?</legend>
+        <div class="radio-row">
+          <input type="radio" id="morning" name="session" value="morning" checked>
+          <label for="morning" style="margin:0;">Saturday, 9am</label>
+        </div>
+        <div class="radio-row">
+          <input type="radio" id="midday" name="session" value="midday">
+          <label for="midday" style="margin:0;">Saturday, 12pm</label>
+        </div>
+        <div class="radio-row">
+          <input type="radio" id="afternoon" name="session" value="afternoon">
+          <label for="afternoon" style="margin:0;">Saturday, 3pm</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Anything else we should know</legend>
+        <div class="checkbox-row">
+          <input type="checkbox" id="lefthand" name="notes" value="lefthand">
+          <label for="lefthand" style="margin:0;">I'm left handed</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="firsttime" name="notes" value="firsttime">
+          <label for="firsttime" style="margin:0;">This is my first time at a wheel</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="allergy" name="notes" value="allergy">
+          <label for="allergy" style="margin:0;">I have a clay or dust sensitivity</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="submit-btn">Reserve my seat</button>
+      <p class="hint">You'll get a confirmation email within a few minutes of signing up.</p>
+    </form>
+  </div>
+
+</body>
+</html>
