@@ -1,9 +1,9 @@
 # Java Programming Assignments
 
-Eleven small Java exercises, moving from basic loops and conditionals
-through overloading, inheritance, and polymorphism. Each folder is self
-contained, a `.java` file plus a README explaining the problem and the
-approach.
+Fourteen small Java exercises, moving from basic loops and conditionals
+through overloading, inheritance, interfaces, and finally packages and
+enums. Each folder is self contained, one or more `.java` files plus a
+README explaining the problem and the approach.
 
 ## Assignments
 
@@ -20,10 +20,14 @@ approach.
 | assignment-09-animal-sound-overriding | Method overriding and runtime polymorphism |
 | assignment-10-calculator-overloading | Method overloading across int and double types |
 | assignment-11-shape-hierarchy | Abstract classes, inheritance, and polymorphism together |
+| assignment-12-grade-evaluator-inheritance | Single-level inheritance, Student → GradeCalculator |
+| assignment-13-library-management-interfaces | Inheritance plus an interface, LibraryItem → Book/Magazine, Borrowable |
+| assignment-14-employee-role-manager | Custom packages, an enum, and sorting with `java.util` |
 
 ## Running these
 
-Every folder works the same way:
+Assignments 01 through 13 are all single-file, single-package programs
+and work the same way:
 
 ```
 cd assignment-01-prime-checker
@@ -35,6 +39,11 @@ Just swap in whichever folder and file name you're working with. Most
 files are named after their public class (`PrimeNumberChecker.java`,
 `Main.java`, and so on), which Java requires, the file name has to match
 the public class it contains.
+
+Assignment 14 is the one exception, it actually spans real packages
+(`company.employees`, `company.utils`), so it has its own multi-file
+folder structure and its own compile command. See that folder's README
+for details.
 
 ## A note on the code
 
