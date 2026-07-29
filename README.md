@@ -1,0 +1,1 @@
+A collection of my semester-wise academic assignments, lab work, and mini projects completed during my Computer Science degree. This repository serves as a structured archive of coursework, organized by semester and subject, documenting my learning progress, programming practice, and problem-solving approach.
